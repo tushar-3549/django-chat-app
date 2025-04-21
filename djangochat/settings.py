@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://django-chat-app-ik44.onrender.com"
+]
+
+
 
 # Application definition
 
