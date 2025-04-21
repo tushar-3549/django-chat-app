@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Django Chat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    main {
+      flex: 1;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-top: 40px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      color: #555;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 14px 16px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+
+    input[type=text]:focus {
+      border-color: #4CAF50;
+      outline: none;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 10px;
+      background-color: #ffffff;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+      margin-top: auto;
+    }
+
+    @media (max-width: 500px) {
+      main {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h2>Django Chat</h2>
+
+    <div class="container">
+      <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <label for="room_name">Room Name</label>
+        <input type="text" name="room_name" id="room_name" required />
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required />
+
+        <input type="submit" value="Enter Room">
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Django Chat. Built with ❤️ using Django.</p>
+  </footer>
+
+</body>
+</html>
